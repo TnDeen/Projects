@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+			'host'      => 'paca.arvixe.com',
+			'database'  => 'siswa100_TnDeen',
+			'username'  => 'siswa100_TnDeen',
+			'password'  => 'sis100wa',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
