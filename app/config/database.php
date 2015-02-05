@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'paca.arvixe.com',
-			'database'  => 'siswa100_TnDeen',
+			'database'  => 'siswa100_mainDB',
 			'username'  => 'siswa100_TnDeen',
 			'password'  => 'sis100wa',
 			'charset'   => 'utf8',

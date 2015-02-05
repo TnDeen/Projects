@@ -1,23 +1,49 @@
 <?php
 
+/*
+	location-of-this-file: app/controllers/
+*/
+
 class HomeController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
-	public function showWelcome()
+	// Filter for members area
+	public function __construct()
 	{
-		return View::make('hello');
+		$this->beforeFilter('auth', array('only' => 'getMembers'));
+	}
+
+	public function getIndex()
+	{
+		return Redirect::to('users');
+	}
+
+	public function getLogin()
+	{
+		return View::make('login');
+	}
+	public function postLogin()
+	{
+		$creds = array(
+			'username' => Input::get('username'),
+			'password' => Input::get('password')
+		);
+
+		if (Auth::attempt($creds)) {
+			return Redirect::intended('users');
+		} else {
+			return Redirect::to('login')->withInput();
+		}
+	}
+
+	public function getLogout()
+	{
+		Auth::logout();
+		return Redirect::to('users');
+	}
+
+	public function getMembers()
+	{
+		return '<h1>This is the members area.</h1>';
 	}
 
 }

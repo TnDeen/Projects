@@ -1,17 +1,15 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
+	location-of-this-file: app/
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+// Step 1: Setting up the resource [Check!]
+// Step 2: Setting up the registration [Check!]
+// Step 3: Creating profile pages [Check!]
+// Step 4: Allowing updates and deletes [Check!]
+// Step 5: Handling authentication [Check!]
+
+Route::resource('users', 'UsersController');
+
+Route::controller('/', 'HomeController');
